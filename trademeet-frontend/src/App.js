@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import Signup from "./Signup";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
@@ -20,6 +21,8 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route path="*" element={<Navigate to="/" />} />
 
         <Route path="/video" element={<VideoCall />} />
       </Routes>
